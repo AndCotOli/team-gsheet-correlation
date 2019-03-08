@@ -1,0 +1,11 @@
+{
+  "name": "gh-team-org-bot",
+  "version": "0.1.0",
+  "description": "Synchronize GSheets and GitHub teams",
+  "main": "index.js",
+  "author": "Semjon Bibow <semjon.bibow@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "googleapis": "27"
+  }
+}
