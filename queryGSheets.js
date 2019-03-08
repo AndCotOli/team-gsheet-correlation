@@ -70,19 +70,25 @@ function getNewToken(oAuth2Client, callback) {
 function listMajors(auth) {
   const sheets = google.sheets({version: 'v4', auth});
   sheets.spreadsheets.values.get({
-    spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
-    range: 'Class Data!A2:E',
+    spreadsheetId: '1Lcsp-oB49tILBhLufn_fNOh32zCHdDWO-9ie7ORyUnc',
+    range: 'General Information!A2:L29',
   }, (err, res) => {
     if (err) return console.log('The API returned an error: ' + err);
     const rows = res.data.values;
+    const frontendDevelopers = [];
+    const backendDevelopers = [];
     if (rows.length) {
-      console.log('Name, Major:');
-      // Print columns A and E, which correspond to indices 0 and 4.
-      rows.map((row) => {
-        console.log(`${row[0]}, ${row[4]}`);
+      rows.forEach((row) => {
+        if (row[3] === "Read Only") return;
+        if (row[7]) {
+          frontendDevelopers.push(row[1]);
+        }
+        if (row[8]) {
+          backendDevelopers.push(row[1]);
+        }
       });
-    } else {
-      console.log('No data found.');
     }
+    console.log(frontendDevelopers)
+    console.log(backendDevelopers)
   });
 }
