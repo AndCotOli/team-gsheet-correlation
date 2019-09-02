@@ -7,6 +7,6 @@
   "license": "MIT",
   "dependencies": {
     "googleapis": "27",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.6.0"
   }
 }
