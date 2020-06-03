@@ -6,7 +6,7 @@
   "author": "Semjon Bibow <semjon.bibow@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "googleapis": "27",
+    "googleapis": "52",
     "node-fetch": "^2.3.0"
   }
 }
